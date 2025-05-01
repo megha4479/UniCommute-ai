@@ -2,13 +2,16 @@ import React, { useRef } from 'react';
 import RotatingHero from "./components/RotatingHero.jsx";
 import HeroSection from './components/HeroSection';
 import FeaturesSection from './components/FeaturesSection';
-import RoutesSection from './components/RoutesSection';
 import OfferingsSection from './components/OfferingsSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import PressSection from './components/PressSection';
+<<<<<<< HEAD
 import EnvironmentalImpactSection from './components/EnvironmentalImpactSection';
 import Navbar from './components/Navbar';
+=======
+import EnvironmentalImpactSection from './components/EnvironmentalImpactSection'; // includes the footer inside
+>>>>>>> c4c62e9 (new changes)
 
 const App = () => {
   const heroRef = useRef();
@@ -25,6 +28,7 @@ const App = () => {
     { title: 'Refund on ride cancellations', description: '' },
   ];
 
+<<<<<<< HEAD
   const routesData = [
     {
       pickup: 'Chembur',
@@ -48,6 +52,8 @@ const App = () => {
   ];
   
 
+=======
+>>>>>>> c4c62e9 (new changes)
   const offeringsData = [
     {
       icon: '/_astro/lite.y4ljOlQy.svg',
@@ -69,7 +75,10 @@ const App = () => {
   ];
 
   const howItWorksData = [
-    { title: 'Select your ride', description: 'Book your free ride by selecting your pickup, dropoff & preferred seat.' },
+    {
+      title: 'Select your ride',
+      description: 'Book your free ride by selecting your pickup, dropoff & preferred seat.',
+    },
     { title: 'Track your bus', description: '' },
     { title: 'Reschedule easily', description: '' },
     { title: 'Book flexi pass', description: '' },
@@ -77,25 +86,29 @@ const App = () => {
 
   const testimonialsData = [
     {
-      quote: 'Ridiculously on time. Appreciate the service and the driver for his smooth, timely driving and courteous manners. Seriously.. your rides are ridiculously on time!',
+      quoteTitle: 'Ridiculously on time',
+      quote: 'Appreciate the service and the driver for his smooth, timely driving and courteous manners. Seriously.. your rides are ridiculously on time!',
       name: 'Aparna',
       position: 'Senior Manager',
       company: 'Union bank of India',
     },
     {
-      quote: 'Safe and secure. As a woman, I feel safe and secure in a Cityflo. The drivers are courteous and very well trained. My co-passengers are so nice. The entire atmosphere is nice and enjoyable.',
+      quoteTitle: 'Safe and secure',
+      quote: 'As a woman, I feel safe and secure in a Cityflo. The drivers are courteous and very well trained. My co-passengers are so nice. The entire atmosphere is nice and enjoyable.',
       name: 'Manjiri Bhalerao',
       position: 'Vice principal',
       company: "S. N. D. T. Women's University",
     },
     {
+      quoteTitle: 'Stopped driving',
       quote: "I’ve stopped using my car for the first time in 7 years in Mumbai. You've made life for commuters very, very easy.",
       name: 'Gaurav Arora',
       position: 'Deputy VP',
       company: 'Edelweiss',
     },
     {
-      quote: 'Cityflo has changed my life. I can do so much more on my way — read, rest, finish my work in the evenings. My family is happy that I travel in a safe, secure & hygenic bus everyday.',
+      quoteTitle: 'Can do so much with my time',
+      quote: 'Cityflo has changed my life. I can do so much more on my way — read, rest, finish my work in the evenings. My family is happy that I travel in a safe, secure & hygienic bus everyday.',
       name: 'Tejaswini Massey',
       position: 'Customer Relationship manager',
       company: 'Sunteck Realty Ltd.',
@@ -139,11 +152,11 @@ const App = () => {
       <HeroSection onFindMyBusClick={handleScrollToHero} />
       <OfferingsSection offerings={offeringsData} />
       <HowItWorksSection steps={howItWorksData} />
-      <RoutesSection routes={routesData} />
       <FeaturesSection features={featuresData} />
       <TestimonialsSection testimonials={testimonialsData} />
       <PressSection pressItems={pressData} />
       <EnvironmentalImpactSection stats={environmentalImpactData} />
+      {/* Footer is already included inside EnvironmentalImpactSection */}
     </div>
   );
 };
