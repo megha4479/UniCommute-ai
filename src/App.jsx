@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import Hero from './components/Hero';
 import HeroSection from './components/HeroSection';
 import FeaturesSection from './components/FeaturesSection';
 import RoutesSection from './components/RoutesSection';
@@ -9,6 +10,14 @@ import PressSection from './components/PressSection';
 import EnvironmentalImpactSection from './components/EnvironmentalImpactSection';
 
 const App = () => {
+  const heroRef = useRef();
+
+  const handleScrollToHero = () => {
+    if (heroRef.current) {
+      heroRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const heroData = {
     title: 'Cityflo: App-based AC buses for office commute',
     subtitle: 'We make your ride to work stress-free. Comfort of your car, without the driving. Doorstep to office desk, direct. Express rides. As fast as a car. On-time buses, every 20 minutes. Flexible plans for all work schedules. Reclaim your commute time.',
@@ -131,7 +140,10 @@ const App = () => {
 
   return (
     <div className="font-sans">
-      <HeroSection {...heroData} />
+      <HeroSection onFindMyBusClick={handleScrollToHero} />
+      <div ref={heroRef}>
+        <Hero />
+      </div>
       <FeaturesSection features={featuresData} />
       <RoutesSection routes={routesData} />
       <OfferingsSection offerings={offeringsData} />
