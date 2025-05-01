@@ -8,6 +8,7 @@ import HowItWorksSection from './components/HowItWorksSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import PressSection from './components/PressSection';
 import EnvironmentalImpactSection from './components/EnvironmentalImpactSection';
+import Navbar from './components/Navbar';
 
 const App = () => {
   const heroRef = useRef();
@@ -53,6 +54,7 @@ const App = () => {
     },
     // Add more routes as needed
   ];
+  
 
   const offeringsData = [
     {
@@ -140,6 +142,7 @@ const App = () => {
 
   return (
     <div className="font-sans">
+       <Navbar />
       <HeroSection onFindMyBusClick={handleScrollToHero} />
       <div ref={heroRef}>
         <Hero />
