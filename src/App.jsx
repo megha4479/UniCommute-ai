@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import Hero from './components/Hero';
 import HeroSection from './components/HeroSection';
 import FeaturesSection from './components/FeaturesSection';
 import RoutesSection from './components/RoutesSection';
@@ -17,14 +16,6 @@ const App = () => {
     if (heroRef.current) {
       heroRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const heroData = {
-    title: 'Cityflo: App-based AC buses for office commute',
-    subtitle: 'We make your ride to work stress-free. Comfort of your car, without the driving. Doorstep to office desk, direct. Express rides. As fast as a car. On-time buses, every 20 minutes. Flexible plans for all work schedules. Reclaim your commute time.',
-    ctaText: 'Find my bus',
-    ctaLink: '#find-my-bus',
-    backgroundImage: '/_astro/ExportHome1Mobile.b6DCev2Q_2mwyGF.png',
   };
 
   const featuresData = [
@@ -144,13 +135,10 @@ const App = () => {
     <div className="font-sans">
        <Navbar />
       <HeroSection onFindMyBusClick={handleScrollToHero} />
-      <div ref={heroRef}>
-        <Hero />
-      </div>
-      <FeaturesSection features={featuresData} />
-      <RoutesSection routes={routesData} />
       <OfferingsSection offerings={offeringsData} />
       <HowItWorksSection steps={howItWorksData} />
+      <RoutesSection routes={routesData} />
+      <FeaturesSection features={featuresData} />
       <TestimonialsSection testimonials={testimonialsData} />
       <PressSection pressItems={pressData} />
       <EnvironmentalImpactSection stats={environmentalImpactData} />
