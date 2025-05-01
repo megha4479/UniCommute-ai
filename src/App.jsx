@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import RotatingHero from "./components/RotatingHero.jsx";
 import HeroSection from './components/HeroSection';
 import FeaturesSection from './components/FeaturesSection';
 import RoutesSection from './components/RoutesSection';
@@ -134,6 +135,7 @@ const App = () => {
   return (
     <div className="font-sans">
        <Navbar />
+       <RotatingHero />
       <HeroSection onFindMyBusClick={handleScrollToHero} />
       <OfferingsSection offerings={offeringsData} />
       <HowItWorksSection steps={howItWorksData} />
